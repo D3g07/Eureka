@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Eureka </title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Link q deixa a gente pegar os icones direto Boxicons CDN -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar"> <!-- Div da sidebar inteira -->
+    <div class="logo-details"> 
+        <div class="logo_name">Eureka</div> <!--o nome que vai aparecer-->
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="#">
+            <i class='bx bx-home'></i> <!-- link do icone direto do site -->
+          <span class="links_name">Home</span>
+        </a>
+         <span class="tooltip"> Home</span>
+      </li>
+      <li>
+       <a href="#">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">Perfil</span>
+       </a>
+       <span class="tooltip">Perfil</span>
+     </li>
+     <li>
+       <a href="#">
+        <i class='bx bx-map-pin' ></i>
+         <span class="links_name">Locais</span>
+       </a>
+       <span class="tooltip">Locais</span>
+     </li>
+     <li>
+       <a href="#">
+        <i class='bx bx-chat'></i>
+         <span class="links_name">Sociais</span>
+       </a>
+       <span class="tooltip">Sociais</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-heart' ></i>
+         <span class="links_name">Salvos</span>
+       </a>
+       <span class="tooltip">Salvos</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-cog' ></i>
+         <span class="links_name">Configurações</span>
+       </a>
+       <span class="tooltip">Configurações</span>
+     </li>
+     <li class="profile">  <!-- Essa parte para baixo é para aquela area de perfil e deslogar -->
+         <div class="profile-details">
+           <img src="pp.jpg" alt="profileImg"> <!-- Imagem q aparece lá em baixo, quando fizermos a pagina de login, aqui será ligado a imagem que o usuario ira colocar -->
+           <div class="name_job">
+             <div class="name">Diego M M</div>
+             <div class="job">Web retardado</div> <!--nem sei se a gente vai deixar isso aqui-->
+           </div>
+         </div>
+         <i class='bx bx-log-out' id="log_out" ></i>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section"> <!--a partir disso é o corpo do site-->
+      <div class="text">Chute na nuca do Cano</div>
+  </section>
+  <script>
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//chamando a função(optional)
+  });
+
+  // o codigo a seguir e para mudar o botao da sidebar(optional)
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//trocando o icone do menu para o de lado
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//trocando o icone do menu para o de lado
+   }
+  }
+  </script>
+</body>
+</html>
