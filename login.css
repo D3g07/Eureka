@@ -16,6 +16,39 @@ html,body{
   background: #e146eb;
   color: #fff;
 }
+.botao{
+  position: absolute;
+  margin-left: 100px;
+  margin-top: 20px;
+  width: 50px;
+  height: 50px;   
+  background: #F58C3B;
+  border-radius: 15px;
+  color: #fff;   
+  font-size:14px;
+  font-weight:700;
+}
+.botao i{
+  color: #fff;
+  height: 50px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 45px;
+  transition: all 0.4s ease;
+  border-radius: 15px;
+}
+.botao i:hover{
+  color: #000000;
+  background: #fff;
+}
+.botao i:hover .tooltip{
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
 .wrapper{
   width: 380px;
   background: #fff;
