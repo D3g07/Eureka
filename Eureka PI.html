@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Eureka</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script defer src="theme.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif+Caption&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+  <link href="./css/main.css" rel="stylesheet" />
+  <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="style-footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style type="text/css">
+
+.box {
+  box-sizing: border-box;
+  
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+body{
+    min-height: 100vh;
+    width: 100%;
+    background: #EEECEB;
+    font-family: "Poppins" , sans-serif;
+  }
+
+  footer{
+    position: absolute;
+    background: #F58C3B;
+    width: 100%;
+
+    left: 0;
+    top: 3800px;
+  }
+  footer .content{
+      max-width: 1250px;
+      margin: auto;
+      padding: 30px 40px 40px 40px;
+  }
+  footer .content .top{
+      display: flex;
+      align-items: center; 
+      justify-content: space-between; 
+  }
+  .content .top .logo-details{
+      color: #fff;
+      font-size: 29px;
+  }
+  .content .top .media-icons{
+     display: flex;
+  }
+  .content .top .media-icons a{
+      height: 40px;
+      width: 40px;
+      background: red;
+      margin: 0 8px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      color: #fff;
+      font-size: 17px;
+      text-decoration: none; 
+      transition: all 0.4s ease;
+  }
+  .top .media-icons a:nth-child(1){
+      background: #4267B2;
+
+  }
+  .top .media-icons a:nth-child(1):hover{
+    background: #fff;
+    color: #4267B2;
+}
+.top .media-icons a:nth-child(2){
+    background: #1DA1F2;
+
+}
+.top .media-icons a:nth-child(2):hover{
+  background: #fff;
+  color: #1DA1F2;
+}
+.top .media-icons a:nth-child(3){
+    background: #E1306C;
+
+}
+.top .media-icons a:nth-child(3):hover{
+  background: #fff;
+  color: #E1306C;
+}
+.top .media-icons a:nth-child(4){
+    background: #0077B5;
+
+}
+.top .media-icons a:nth-child(4):hover{
+  background: #fff;
+  color: #0077B5;
+}
+.top .media-icons a:nth-child(5){
+    background: #FF0000;
+
+}
+.top .media-icons a:nth-child(5):hover{
+  background: #fff;
+  color: #FF0000;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+.sidebar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 70px;
+  background: #F58C3B;
+  padding: 5px 10px;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+.sidebar.open{
+  width: 220px;
+}
+.sidebar .logo-details{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.sidebar .logo-details .icon{
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar .logo-details .logo_name{
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  margin: 5px 18px;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details .icon,
+.sidebar.open .logo-details .logo_name{
+  opacity: 1;
+}
+.sidebar .logo-details #btn{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.sidebar.open .logo-details #btn{
+  text-align: right;
+}
+.sidebar i{
+  color: #fff;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.sidebar .nav-list{
+  margin-top: 20px;
+  height: 100%;
+}
+.sidebar li{
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+.sidebar li .tooltip{
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar li:hover .tooltip{
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar.open li .tooltip{
+  display: none;
+}
+.sidebar input{
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #000000;
+}
+.sidebar.open input{
+  padding: 0 20px 0 50px;
+  width: 100%;
+}
+.sidebar li a{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.sidebar li a:hover{
+  background: #FFF;
+}
+.sidebar li a .links_name{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.sidebar.open li a .links_name{
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidebar li a:hover .links_name,
+.sidebar li a:hover i{
+  transition: all 0.5s ease;
+  color: #000000;
+}
+.sidebar li i{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+.sidebar li.profile{
+  position: fixed;
+  height: 60px;
+  width: 70px;
+  left: 0;
+  bottom: -8px;
+  padding: 10px 14px;
+  background: #D56E1E;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+.sidebar.open li.profile{
+  width: 220px;
+}
+.sidebar li .profile-details{
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.sidebar li img{
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+.sidebar li.profile .name,
+.sidebar li.profile .job{
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+  white-space: nowrap;
+}
+.sidebar li.profile .job{
+  font-size: 12px;
+}
+.sidebar .profile #log_out{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: #D56E1E;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 0px;
+  transition: all 0.5s ease;
+}
+.sidebar.open .profile #log_out{
+  width: 50px;
+  background: none;
+}
+.home-section{
+  position: relative;
+  background: #fff;
+  min-height: 100vh;
+  top: 0;
+  left: 70px;
+  width: calc(100% - 70px);
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+.sidebar.open ~ .home-section{
+  left: 220px;
+  width: calc(100% - 220px);
+}
+.home-section .text{
+  display: inline-block;
+  color: #11101d;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 18px
+}
+@media (max-width: 420px) {
+  .sidebar li .tooltip{
+    display: none;
+  }
+}
+
+
+.image_div{
+  background: url(pexels-simon-berger-1323550.jpg);
+  width: 100%;
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+.principal_text {
+  width: 949px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 685px;
+  left: 301px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: PT Serif Caption;
+  font-weight: Regular;
+  font-size: 48px;
+  opacity: 1;
+  text-align: center;
+}
+.name {
+  color: #fff;
+}
+.logo_eureka {
+  width: 407px;
+  color: rgba(240,201,201,1);
+  position: absolute;
+  float: right;
+  top: 25px;
+  left: 1015px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: PT Serif Caption;
+  font-weight: Regular;
+  font-size: 50px;
+  opacity: 1;
+  text-align: right;
+}
+.third_image {
+  width: 436px;
+  height: 320px;
+  background: rgba(196,196,196,1);
+  opacity: 1;
+  position: absolute;
+  top: 3117px;
+  left: 903px;
+  overflow: hidden;
+}
+.text_third_image {
+  width: 522px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 3156px;
+  left: 230px;
+  font-family: PT Serif Caption;
+  font-weight: Regular;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+}
+.v304_926 {
+  width: 43px;
+  height: 43px;
+  background: rgba(225,70,235,1);
+  opacity: 1;
+  position: absolute;
+  top: 2904px;
+  left: 1345px;
+  border-radius: 50%;
+}
+.v304_927 {
+  width: 32px;
+  height: 32px;
+  background: rgba(242,82,121,1);
+  opacity: 1;
+  position: absolute;
+  top: 2947px;
+  left: 1329px;
+  border-radius: 50%;
+}
+
+.v304_928 {
+  width: 36px;
+  height: 36px;
+  background: rgba(245,140,59,1);
+  opacity: 1;
+  position: absolute;
+  top: 2911px;
+  left: 1293px;
+  border-radius: 50%;
+}
+.v304_929 {
+  width: 43px;
+  height: 43px;
+  background: rgba(225,70,235,1);
+  opacity: 1;
+  position: absolute;
+  top: 2932px;
+  left: 644px;
+  border-radius: 50%;
+}
+.v304_930 {
+  width: 32px;
+  height: 32px;
+  background: rgba(242,82,121,1);
+  opacity: 1;
+  position: absolute;
+  top: 2669px;
+  left: 777px;
+  border-radius: 50%;
+}
+.v304_931 {
+  width: 36px;
+  height: 36px;
+  background: rgba(245,140,59,1);
+  opacity: 1;
+  position: absolute;
+  top: 3067px;
+  left: 793px;
+  border-radius: 50%;
+}
+.v304_932 {
+  width: 43px;
+  height: 43px;
+  background: rgba(225,70,235,1);
+  opacity: 1;
+  position: absolute;
+  top: 3451px;
+  left: 150px;
+  border-radius: 50%;
+}
+.v304_933 {
+  width: 32px;
+  height: 32px;
+  background: rgba(242,82,121,1);
+  opacity: 1;
+  position: absolute;
+  top: 3494px;
+  left: 134px;
+  border-radius: 50%;
+}
+.v304_934 {
+  width: 36px;
+  height: 36px;
+  background: rgba(245,140,59,1);
+  opacity: 1;
+  position: absolute;
+  top: 3591px;
+  left: 1181px;
+  border-radius: 50%;
+}
+.v304_935 {
+  width: 43px;
+  height: 43px;
+  background: rgba(219,110,85,1);
+  opacity: 1;
+  position: absolute;
+  top: 3042px;
+  left: 193px;
+  border-radius: 50%;
+}
+.v304_936 {
+  width: 42px;
+  height: 42px;
+  background: rgba(235,169,42,1);
+  opacity: 1;
+  position: absolute;
+  top: 3022px;
+  left: 214px;
+  border-radius: 50%;
+}
+.text_first_image {
+  width: 462px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 1844px;
+  left: 204px;
+  font-family: PT Serif Caption;
+  font-weight: Regular;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+}
+.v304_938 {
+  width: 80px;
+  height: 80px;
+  background: rgba(242,82,121,1);
+  opacity: 1;
+  position: absolute;
+  top: 2338px;
+  left: 175px;
+  border-radius: 50%;
+}
+.v304_939 {
+  width: 67px;
+  height: 67px;
+  background: rgba(245,140,59,1);
+  opacity: 1;
+  position: absolute;
+  top: 2348px;
+  left: 1259px;
+  border-radius: 50%;
+}
+.v304_940 {
+  width: 65px;
+  height: 65px;
+  background: rgba(235,169,42,1);
+  opacity: 1;
+  position: absolute;
+  top: 2283px;
+  left: 1194px;
+  border-radius: 50%;
+}
+.v304_941 {
+  width: 69px;
+  height: 69px;
+  background: rgba(225,70,235,1);
+  opacity: 1;
+  position: absolute;
+  top: 2304px;
+  left: 208px;
+  border-radius: 50%;
+}
+.v304_942 {
+  width: 80px;
+  height: 80px;
+  background: rgba(242,82,121,1);
+  opacity: 1;
+  position: absolute;
+  top: 3562px;
+  left: 403px;
+  border-radius: 50%;
+}
+.v304_943 {
+  width: 69px;
+  height: 69px;
+  background: rgba(225,70,235,1);
+  opacity: 1;
+  position: absolute;
+  top: 3451px;
+  left: 742px;
+  border-radius: 50%;
+}
+.v304_944 {
+  width: 73px;
+  height: 72px;
+  background: rgba(219,110,85,1);
+  opacity: 1;
+  position: absolute;
+  top: 2304px;
+  left: 1272px;
+  border-radius: 50%;
+}
+
+
+.v304_945 {
+  width: 67px;
+  height: 67px;
+  background: rgba(245,140,59,1);
+  opacity: 1;
+  position: absolute;
+  top: 2270px;
+  left: 765px;
+  border-radius: 50%;
+}
+.v304_946 {
+  width: 65px;
+  height: 65px;
+  background: rgba(235,169,42,1);
+  opacity: 1;
+  position: absolute;
+  top: 1736px;
+  left: 516px;
+  border-radius: 50%;
+}
+.v304_947 {
+  width: 73px;
+  height: 72px;
+  background: rgba(219,110,85,1);
+  opacity: 1;
+  position: absolute;
+  top: 2316px;
+  left: 766px;
+  border-radius: 50%;
+}
+.second_image {
+  width: 426px;
+  height: 329px;
+  background: rgba(196,196,196,1);
+  opacity: 1;
+  position: absolute;
+  top: 2516px;
+  left: 230px;
+  overflow: hidden;
+}
+.text_second_image {
+  width: 477px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 2516px;
+  left: 868px;
+  font-family: PT Serif Caption;
+  font-weight: Regular;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+}
+.div_entrar_button {
+  width: 151px;
+  height: 52px;
+  background: rgba(245,140,59,1);
+  opacity: 1;
+  position: absolute;
+  top: 15px;
+  left: 325px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  overflow: hidden;
+}
+.div_cadastro_button {
+  width: 151px;
+  height: 52px;
+  background: rgba(245,140,59,1);
+  opacity: 1;
+  position: absolute;
+  top: 15px;
+  left: 521px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  overflow: hidden;
+}
+.entrar_button {
+  width: 89px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 27px;
+  left: 369px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Roboto;
+  font-weight: Regular;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+}
+.cadastro_button {
+  width: 141px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 25px;
+  left: 550px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Roboto;
+  font-weight: Regular;
+  font-size: 24px;
+  opacity: 1;
+  text-align: left;
+}
+.first_image {
+  width: 493px;
+  height: 292px;
+  background: rgba(196,196,196,1);
+  opacity: 1;
+  position: absolute;
+  top: 1834px;
+  left: 843px;
+  overflow: hidden;
+}
+.faleconosco_div {
+  width: 335px;
+  height: 41px;
+  background: rgba(225,70,235,1);
+  opacity: 1;
+  position: absolute;
+  top: 3680px;
+  left: 595px;
+  overflow: hidden;
+}
+.faleconosco_button {
+  width: 181px;
+  color: rgba(232,232,232,1);
+  position: absolute;
+  top: 3684px;
+  left: 673px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: PT Serif Caption;
+  font-weight: Regular;
+  font-size: 24px;
+  opacity: 1;
+  text-align: center;
+}
+.v304_958 {
+  width: 100%;
+  height: 175px;
+  background: rgba(219,110,85,1);
+  opacity: 1;
+  position: absolute;
+  top: 3753px;
+  left: 0px;
+  overflow: hidden;
+}
+.v304_959 {
+  width: 79px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 3821px;
+  left: 1254px;
+  font-family: PT Serif Caption;
+  font-weight: Regular;
+  font-size: 14px;
+  opacity: 1;
+  text-align: center;
+}
+
+.v304_967 {
+  width: 231px;
+  height: 231px;
+  background: rgba(196,196,196,1);
+  opacity: 1;
+  position: absolute;
+  top: 1292px;
+  left: 291px;
+  border-radius: 50%;
+}
+
+.v304_9672{
+    width: 231px;
+    height: 231px;
+    background: #E146EB;
+    opacity: 1;
+    position: absolute;
+    top: 1100px;
+    left: 470px;
+    border-radius: 50%;
+    }
+
+    .v304_9673{
+    width: 231px;
+    height: 231px;
+    background: #F58C3B;
+    opacity: 1;
+    position: absolute;
+    top: 1100px;
+    left: 870px;
+    border-radius: 50%;
+    }
+
+    .v304_9674{
+    width: 231px;
+    height: 231px;
+    background: #DB6E55;
+    opacity: 1;
+    position: absolute;
+    top: 1300px;
+    left: 1050px;
+    border-radius: 50%;
+    }
+
+
+.v304_968 {
+  width: 230px;
+  height: 231px;
+  background: rgba(242,82,121,1);
+  opacity: 1;
+  position: absolute;
+  top: 1263px;
+  left: 673px;
+  border-radius: 50%;
+}
+.v304_969 {
+  width: 297px;
+  height: 298px;
+  background: rgba(235,169,42,1);
+  opacity: 1;
+  position: absolute;
+  top: 1010px;
+  left: 1097px;
+  border-radius: 50%;
+}
+.v304_970 {
+  width: 230px;
+  height: 231px;
+  background: rgba(245,140,59,1);
+  opacity: 1;
+  position: absolute;
+  top: 1043px;
+  left: 788px;
+  border-radius: 50%;
+}
+.v304_971 {
+  width: 224px;
+  height: 224px;
+  background: rgba(225,70,235,1);
+  opacity: 1;
+  position: absolute;
+  top: 1124px;
+  left: 473px;
+  border-radius: 50%;
+}
+.v304_972 {
+  width: 231px;
+  height: 231px;
+  background: rgba(219,110,85,1);
+  opacity: 1;
+  position: absolute;
+  top: 1263px;
+  left: 951px;
+  border-radius: 50%;
+}
+.v304_973 {
+  width: 63px;
+  height: 63px;
+  background: rgba(235,169,42,1);
+  opacity: 1;
+  position: absolute;
+  top: 840px;
+  left: 1218px;
+  border-radius: 50%;
+}
+.v304_974 {
+  width: 106px;
+  height: 105px;
+  background: rgba(245,140,59,1);
+  opacity: 1;
+  position: absolute;
+  top: 1916px;
+  left: 69px;
+  border-radius: 50%;
+}
+.v304_975 {
+  width: 85px;
+  height: 84px;
+  background: rgba(225,70,235,1);
+  opacity: 1;
+  position: absolute;
+  top: 1001px;
+  left: 291px;
+}
+.v304_976 {
+  width: 66px;
+  height: 67px;
+  background: rgba(219,110,85,1);
+  opacity: 1;
+  position: absolute;
+  top: 1038px;
+  left: 258px;
+  border-radius: 50%;
+}
+.v304_977 {
+  width: 56px;
+  height: 54px;
+  background: rgba(245,140,59,1);
+  opacity: 1;
+  position: absolute;
+  top: 852px;
+  left: 1253px;
+  border-radius: 50%;
+}
+.v304_986 {
+  width: 66px;
+  height: 67px;
+  background: rgba(219,110,85,1);
+  opacity: 1;
+  position: absolute;
+  top: 194px;
+  left: 173px;
+  border-radius: 50%;
+}
+</style>
+<body>
+            <div class="sidebar"> 
+    <div class="logo-details"> 
+        <div class="logo_name">Eureka</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="#">
+            <i class='bx bx-home'></i> <!-- link do icone direto do site -->
+          <span class="links_name">Home</span>
+        </a>
+         <span class="tooltip">Home</span>
+      </li>
+      <li>
+       <a href="#">
+         <i class='bx bx-user'></i>
+         <span class="links_name">Perfil</span>
+       </a>
+       <span class="tooltip">Perfil</span>
+     </li>
+     <li>
+       <a href="#">
+        <i class='bx bx-map-pin' ></i>
+         <span class="links_name">Locais</span>
+       </a>
+       <span class="tooltip">Locais</span>
+     </li>
+     <li>
+       <a href="#">
+        <i class='bx bx-chat'></i>
+         <span class="links_name">Sociais</span>
+       </a>
+       <span class="tooltip">Sociais</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-heart' ></i>
+         <span class="links_name">Salvos</span>
+       </a>
+       <span class="tooltip">Salvos</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-cog' ></i>
+         <span class="links_name">Configurações</span>
+       </a>
+       <span class="tooltip">Configurações</span>
+     </li>
+
+    <!-- Imagem de Perfil e LogOut -->
+    
+    <li class="profile">
+      <div class="profile-details">
+        <img src="pp.jpg" alt="profileImg">
+        <div class="name_job">
+          <div class="name">Diego M M</div>
+          <div class="job">Web retardado</div> 
+        </div>
+      </div>
+      <i class='bx bx-log-out' id="log_out" ></i>
+  </li>
+ </ul>
+</div>
+        <div class="image_div"></div>
+        <span class="principal_text">Uma nova forma de viajar</span>
+        <div class="div_entrar_button"></div>
+        <div class="div_cadastro_button"></div>
+        <span class="entrar_button">Entrar</span>
+        <span class="cadastro_button">Cadastro</span>
+        <div class="faleconosco_div"></div>
+        <span class="faleconosco_button">Fale Conosco</span>
+        <div class="name">
+        <span class="logo_eureka">Eureka</span>
+
+           <!-- bolinhas pequenas !-->
+        <div class="v304_926"></div>
+        <div class="v304_927"></div>
+        <div class="v304_928"></div>
+        <div class="v304_929"></div>
+        <div class="v304_930"></div>
+        <div class="v304_931"></div>
+        <div class="v304_932"></div>
+        <div class="v304_933"></div>
+        <div class="v304_934"></div>
+        <div class="v304_935"></div>
+        <div class="v304_936"></div>
+        <div class="v304_938"></div>
+        <div class="v304_939"></div>
+        <div class="v304_940"></div>
+        <div class="v304_941"></div>
+        <div class="v304_942"></div>
+        <div class="v304_943"></div>
+        <div class="v304_947"></div>
+           <!-- bolinhas grandes rs --> 
+        <div class="v304_967"></div>
+        <div class="v304_968"></div>
+        <div class="v304_9672"></div>
+        <div class="v304_9673"></div>
+        <div class="v304_9674"></div>
+
+        <span class="text_first_image">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non gravida metus, nec eleifend lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis ac urna a nisl fringilla bibendum sed id elit. </span>
+        <div class="first_image"></div>
+
+        <span class="text_second_image">Donec libero tellus, finibus in dignissim ut, finibus vitae metus. Vivamus ut tortor tempor, aliquam sem eget, mollis ipsum. Praesent ullamcorper risus maximus, dictum tortor vel, tincidunt urna. Nam in odio auctor tellus malesuada convallis. Praesent elementum enim arcu, eu luctus orci suscipit eget..</span>
+        <div class="second_image"></div>
+
+        <span class="text_third_image">Mauris blandit eros vel aliquet suscipit. Phasellus varius velit a risus bibendum, quis porttitor nisi sollicitudin. Morbi luctus pulvinar diam, eget molestie enim consectetur eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis tristique lectus vel tempor. </span>
+        <div class="third_image"></div>
+
+        <div class="faleconosco_div"></div>
+        <span class="faleconosco_button">Fale Conosco</span>
+
+         <footer>
+        <div class="content">
+            <div class="top">
+              <div class="logo-details">
+              <i class="far fa-sun"></i>
+              <span class="logo_name">EUREKA</span>
+             </div>
+             <!--Ícones de redes sociais-->
+             <div class="media-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a> 
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+        </div>
+        </footer>
+
+
+</div>
+      
+
+  <script>
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//chamando a função(optional)
+  });
+
+  // o codigo a seguir e para mudar o botao da sidebar(optional)
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //trocando o icone do menu para o de lado
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu"); //trocando o icone do menu para o de lado
+   }
+  }
+  </script>
+</body>
