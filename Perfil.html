@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>   Perfil </title>
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/style-footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>  <!-- Link q deixa a gente pegar os icones direto Boxicons CDN -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" href="imagens/Eureka teste.jpeg">
+   </head>
+
+<body>
+  <div class="sidebar"> 
+    <div class="logo-details"> 
+        <div class="logo_name">Eureka</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="#">
+            <i class='bx bx-home'></i> <!-- link do icone direto do site -->
+          <span class="links_name">Home</span>
+        </a>
+         <span class="tooltip"> Home</span>
+      </li>
+      <li>
+       <a href="#">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">Perfil</span>
+       </a>
+       <span class="tooltip">Perfil</span>
+     </li>
+     <li>
+       <a href="#">
+        <i class='bx bx-map-pin' ></i>
+         <span class="links_name">Locais</span>
+       </a>
+       <span class="tooltip">Locais</span>
+     </li>
+     <li>
+     <li>
+       <a href="#">
+         <i class='bx bx-heart' ></i>
+         <span class="links_name">Salvos</span>
+       </a>
+       <span class="tooltip">Salvos</span>
+     </li>
+     <li>
+      <a href="#">
+       <i class='bx bx-chat'></i>
+        <span class="links_name">Contate-nos</span>
+      </a>
+      <span class="tooltip">Contate-nos</span>
+    </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-cog' ></i>
+         <span class="links_name">Configurações</span>
+       </a>
+       <span class="tooltip">Configurações</span>
+     </li>
+
+    <!-- Imagem de Perfil e LogOut -->
+    
+    <li class="profile">
+      <div class="profile-details">
+        <img src="imagens/pp.jpg" alt="profileImg">
+        <div class="name_job">
+          <div class="name">Diego M M</div>
+          <div class="job">Web retardado</div> 
+        </div>
+      </div>
+      <i class='bx bx-log-out' id="log_out" ></i>
+  </li>
+ </ul>
+</div>
+
+  <!-- CORPO SITE -->
+
+  <section class="home-section"> 
+  </br></br>
+    <div class="container">
+        <div class="perfil-header">
+            <div class="foto-de-perfil">
+                <img src="imagens/pp.jpg" width="200" alt="">
+            </div>
+            <div class="perfil-info">
+                <h3 class="username">Diego M Magalhães</h3>
+                <div class="endereco">
+                    <p class="estado">São Paulo,</p>
+                    <span class="pais">Brasil.</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="corpo">
+            <div class="parte-esquerda">
+                <div class="perfil-side">
+                    <p class="numero">
+                        <i class='bx bx-phone'></i>+40028922
+                    </p>
+                    <p class="email">
+                        <i class='bx bx-envelope' ></i>curiosohein@gmail.com
+                    </p>
+                    <div class="user-bio">
+                        <h3>Bio</h3>
+                        <p class="bio">
+                            Eu gosto muito de viajar, adoro praias e cachoeiras. Sou estudante da ETEC Professor Camargo Aranha, faço curso de Desenvolvimento de Sistemas
+                             <!-- Mitenasai! (Sai!) Sai! (Sai!) (Hai, SAIDO CHESTOOOO!) Onegai muscle meccha motetaaaai Onegai muscle meccha yasetaai yes! Onegai muscle meccha motetaaai nara Uuu! (Kireteruyo!) Haa! (Kireteruyo!) Kin niku ni onegaida! -->
+                        </p>
+                    </div>
+                    <div class="perfil-btn">
+                        <button class="chat">
+                            <i class='bx bx-chat'></i>Mudar Bio
+                        </button>
+                      </div>
+                </div>
+            </div>
+
+            <div class="parte-direita">
+                <div class="nav">
+                    <ul>
+                        <li onclick="tabs(0)" class="user-post active">Postagens</li>
+                    </ul>
+                </div>
+                <div class="perfil-corpo">
+                    <div class="perfil-aba-posts">
+                        <h1>Suas Postagens</h1>
+                        <p> Sim é o Roteiro inteiro de Bee Movie, eu precisava de um placeholder aqui e não sabia o que colocar.
+                            De acordo com todas
+                            as conhecidas leis da aviação
+                            não existe forma pela qual
+                            uma abelha fosse capaz de voar.
+                            Suas asas são muito pequenas para elevar
+                            seu pequeno corpo gordo acima do solo.
+                            De qualquer forma, é claro,
+                            a abelha voa.
+                            Porque as abelhas não se preocupam com
+                            o que os humanos acham ser impossível.
+                            Amarelo e preto, amarelo e
+                            preto, amarelo e preto...
+                            Oh! Preto e amarelo.
+                            Vamos dar uma olhadinha.
+                            MEL
+                            Barry, o café está pronto!
+                            Estou indo!
+                            Oh, espere um segundo.
+                            -Alô?
+                            -Barry?
+                            Adam?
+                            Pode acreditar nisto?
+                            Não acredito. Pego
+                            você daqui a pouco.
+                            Bem melhor.
+                            Barry, por quê não usa as escadas?
+                            Seu pai pagou uma boa grana por elas.
+                            Desculpe. Estou empolgado.
+                            Ah, vai se formar. Estou
+                            muito orgulhoso de você.
+                            Excelentes notas. Tudo "B".
+                            -Estamos orgulhosos.
+                            -Ah, passei uma coisa aqui.
+                            -Tem algo em suas asas.
+                            -Ai, me deixa.
+                            -Estaremos lá. Na fila número 118.000.
+                            -Tchau!
+                            Barry, já disse para não
+                            voar dentro de casa.
+                            BEE MOVIE
+                            A História de uma Abelha
+                            -Oi, Adam.
+                            -Olá, Barry.
+                            Passou gel nas suas asas?
+                            Um pouco. É um dia especial.
+                            Finalmente estamos nos formando.
+                            Nunca pensei que conseguiria.
+                            Sim. Três dias de escola.
+                            Três dias no ensino médio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</br>
+</br>
+</br>
+
+
+  <!-- FIM DO SITE -- NÃO MUDE NADA DAQUI PARA BAIXO -->
+
+      <footer>
+        <div class="content">
+            <div class="top">
+              <div class="logo-details">
+                <i class='bx bx-sun'></i>
+              <span class="logo_name">EUREKA</span>
+             </div>
+             <!--Ícones de redes sociais-->
+             <div class="media-icons">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a> 
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+        </div>
+        </footer>
+  </section>
+
+  <script>
+
+    // SCRIPT PARA A SIDEBAR
+
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//chamando a função(optional)
+  });
+
+  // o codigo a seguir e para mudar o botao da sidebar(optional)
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //trocando o icone do menu para o de lado
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu"); //trocando o icone do menu para o de lado
+   }
+  }
+  </script>
+</body>
+</html>
