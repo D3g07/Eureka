@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.tudo {
+  background-image: url(/imagens/&Triangulos.jpg);
+}
+.box-titulo {
+  text-align: center;
+}
+.box-titulo p {
+  margin-top: 10px;
+  line-height: 24px;
+  color: black;
+}
+.box-titulo h1 {
+  font-size: 35px;
+}
+.caixaperfil {
+  width: 240px;
+  height: 260px;
+  background: #fff;
+  border-radius: 4px;
+  margin-left: 3px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 10px 10px rgba(115, 193, 255, 0.1);
+  padding: 20px;
+  position: relative;
+  transition: all 0.5s ease;
+}
+.caixaperfil img {
+  width: 100px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border-radius: 4px;
+  transition: all 0.5s ease;
+}
+.caixaperfil h4 {
+  margin-top: 25px;
+  margin-bottom: 5px;
+  color: #f2517a;
+}
+small {
+  color: #555;
+}
+.sociais {
+  background: #e146ea;
+  margin: 35px auto 5px;
+  text-align: center;
+  border-radius: 3px;
+}
+.sociais .fab {
+  margin: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+.caixaperfil p {
+  text-align: center;
+  line-height: 24px;
+  color: #555;
+}
+.time {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: auto;
+  margin: auto;
+}
+.caixaperfil img:hover {
+  width: 200px;
+}
+.caixaperfil:hover {
+  background: #e146ea;
+}
+.caixaperfil:hover h4 {
+  color: #fff;
+}
+.caixaperfil:hover p {
+  color: #fff;
+}
+.caixaperfil:hover small {
+  color: #fff;
+}
+.caixaperfil:hover .sociais {
+  background: #f2517a;
+}
