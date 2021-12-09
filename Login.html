@@ -7,7 +7,7 @@
       <link rel="stylesheet" href="css/style-footer.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
       <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>  
-      <link rel="icon" href="imagens/Eureka teste.jpeg">
+      <link rel="icon" href="imagens/EurekaTransparente.png" />
    </head>
    <body>
 </br></br>
@@ -20,14 +20,14 @@
          <div class="titulo">
             Entrar
          </div>
-         <form action="#">
+         <form action="" method="post">
             <div class="field">
-               <input type="name" required>
-               <label>Nome de usuário (ou e-mail)</label>
+               <input type="text" name="username" required>
+               <label for="username">Nome de usuário</label>
             </div>
             <div class="field">
-               <input type="password" required>
-               <label>Senha</label>
+               <input type="password" name="password" required>
+               <label for="password">Senha</label>
             </div>
             <div class="content">
                <div class="checkbox">
@@ -39,12 +39,15 @@
                </div>
             </div>
             <div class="field">
-               <input type="submit" value="Login">
+               <button type="submit" id="log-in" value="Login"><a href="Home.html">Login</a></button>
             </div>
             <div class="signup-link">
                Ainda não é cadastrado? <a href="Cadastro.html">Cadastre-se</a>
             </div>
          </form>
+
+         
+
       </div>
 
 

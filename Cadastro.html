@@ -7,7 +7,7 @@
       <link rel="stylesheet" href="../css/style-footer.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
       <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-      <link rel="icon" href="imagens/EurekaTransparente.png">
+      <link rel="icon" href="imagens/EurekaTransparente.png" />
    </head>
    <body>
 
@@ -21,35 +21,38 @@
          <div class="titulo">
             Cadastre-se
          </div>
-         <form action="#">
+         <form method="post">
             <div class="field">
-                <input type="name" required>
-                <label>Seu nome</label>
+                <input type="text" name="name" required>
+                <label>Seu nome completo</label>
              </div>
              <div class="field">
-                <input type="lastname" required>
-                <label>Seu sobrenome</label>
+                <input type="text"  name="uid" required>
+                <label>Seu nome de usuário</label>
              </div>
             <div class="field">
-                <input type="email" required>
+                <input type="text" name="email" required>
                 <label>E-mail</label>
              </div>
             <div class="field">
-               <input type="password" required>
+               <input type="password" name="pdw" required>
                <label>Senha</label>
             </div>
             <div class="field">
-                <input type="password" required>
+                <input type="password" name="pdwrepeat" required>
                 <label>Comfirme a senha</label>
              </div>
             </br>
             <div class="field">
-               <input type="submit" value="Confirmar">
+               <button type="submit" name="submit" value="Confirmar">Confirmar</button>
             </div>
             <div class="signup-link">
                Já possui uma conta? <a href="Login.html">Faça login</a>
             </div>
          </form>
+
+         
+
       </div>
 
     </br></br></br>
